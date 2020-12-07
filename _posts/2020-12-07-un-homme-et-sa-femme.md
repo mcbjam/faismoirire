@@ -1,6 +1,6 @@
 ---
 layout: post_full
-title: Chez le Gyneco
+title: Un homme pince les fesse de sa femme
 featured-img: "amitie-homme-femme.jpg"
 featured-img-alt: Censure et Liberté d'expression
 description: "Un homme va voir sa femme et lui pince une fesse : si tu raffermissais tou ça ...."

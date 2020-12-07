@@ -32,11 +32,13 @@ layout: default
             {% if post.url!=page.url %}
             <div class="col-md-4">
               <div class="card card-inverse card-primary text-center">
+                <a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-primary">
                 {% if post.featured-img %}
                 <img src="{{site.url}}{{site.baseurl}}/images/{{post.featured-img}}" class="card-img-top" style="max-height: 10rem;"/>
                 {% else %}
                 <img src="{{post.featured-img-url}}" class="card-img-top" style="max-height: 10rem;" />
                 {% endif %}
+              </a>
                 <div class="card-body">
                   <h4 class="card-title">{{ post.title }}</h4>
                   <p class="card-text">{{ post.description }}</p>

@@ -10,9 +10,10 @@ layout: default
     <div class="col-md-4">
       <div class="card card-inverse card-primary text-center">
         {% if post.featured-img %}
-        <img src="{{site.url}}{{site.baseurl}}/images/{{post.featured-img}}" class="card-img-top" style="max-height: 10rem;"/>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-primary"><img src="{{site.url}}{{site.baseurl}}/images/{{post.featured-img}}" class="card-img-top" style="max-height: 10rem;"/></a>
+        
         {% else %}
-        <img src="{{post.featured-img-url}}" class="card-img-top" style="max-height: 10rem;" />
+        <a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-primary"><img src="{{site.url}}{{site.baseurl}}/images/{{post.featured-img-url}}" class="card-img-top" style="max-height: 10rem;"/></a>
         {% endif %}
         <div class="card-body">
           <h4 class="card-title">{{ post.title }}</h4>

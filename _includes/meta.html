@@ -1,0 +1,43 @@
+    <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+
+        {% if page.description %}
+        <meta name="description" content="{{ page.description }}">
+        <meta property="og:description" content="{{ page.description }}" />
+        {% else %}
+            {% if page.excerpt %}
+            <meta name="description" content="{{ page.excerpt| strip_html }}" />
+            <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
+            {% else %}
+            <meta name="description" content="{{ site.description }}">
+            <meta property="og:description" content="{{ site.description }}" />
+            {% endif %}
+         {% endif %}
+    <meta name="author" content="{{ site.name }}" />
+
+    {% if page.title %}
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="twitter:title" content="{{ page.title }}" />
+
+    {% endif %}
+
+
+    {% if page.featured-img %}
+    <meta property="og:image"         content="{{site.url}}{{site.baseurl}}/images/{{page.featured-img}}" />
+    {% else %}
+        {% if page.featured-img-url %}
+        <meta property="og:image"         content="{{page.featured-img-url}}" />
+        {% else %}
+        <meta property="og:image"         content="{{site.url}}{{site.baseurl}}/images/terre.jpg" />
+        {% endif %}
+    {% endif %}
+
+    <meta property="og:url"           content="{{site.url}}{{site.baseurl}}{{page.url}}" />
+    <meta property="og:type"          content="website" />
+
+   
+
+

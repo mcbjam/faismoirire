@@ -4,55 +4,45 @@ layout: default
 
 
 
-      <article class="post" style="margin-bottom: 2rem;">
-        <div class="fb-share-button" data-href="{{site.url}}{{site.baseurl}}{{page.url}}" data-layout="button_count" data-size="large"><a target="_blank" class="fb-xfbml-parse-ignore"></a></div>
-        <div class="fb-like" data-href="{{site.url}}{{site.baseurl}}{{page.url}}" data-width="40" data-layout="standard" data-action="like" data-size="large" data-share="false"></div>
-        
-        
-        <h1>{{ page.title }}</h1>
-        <div class="date">
-          Written on {{ page.date | date: "%B %e, %Y" }}
-        </div>
-      
-        <div class="entry">
-          {{ content }}
-        </div>
-       
-      </article>
-      <div class="row">
-      <div class="fb-share-button" data-href="{{site.url}}{{site.baseurl}}{{page.url}}" data-layout="button_count" data-size="large"><a target="_blank" class="fb-xfbml-parse-ignore"></a></div>
-      <div class="fb-like" data-href="{{site.url}}{{site.baseurl}}{{page.url}}" data-width="40" data-layout="standard" data-action="like" data-size="large" data-share="false"></div>
+<section class="u-clearfix u-white u-section-4" id="sec-8df5">
+  <div class="u-clearfix u-sheet u-sheet-1" >
+    <h3 class="u-text u-text-1" style="width:100%;">{{ page.title }}</h3>
+     <div class="date">
+      Written on {{ page.date | date: "%B %e, %Y" }}
     </div>
-    <br>
-
-    <div class="row">
-      <div class="fb-comments" data-href="{{site.url}}{{site.baseurl}}{{page.url}}" data-numposts="5" data-width=""></div>
-    </div>
-
-      <hr>
-
+    <div class="fb-like" data-href="{{site.url}}{{site.baseurl}}{{page.url}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
  
-          <h2>Autres articles :</h2>
-          <div class="row">
+    <p class="u-text u-text-2">{{ content }}
+    </p>
+  </div>
+</section>
 
-            {% for post in site.posts %}
-            {% if post.url!=page.url %}
-            <div class="col-md-4">
-              <div class="card card-inverse card-primary text-center">
-                <a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-primary">
-                {% if post.featured-img %}
-                <img src="{{site.url}}{{site.baseurl}}/images/{{post.featured-img}}" class="card-img-top" style="max-height: 10rem;"/>
-                {% else %}
-                <img src="{{post.featured-img-url}}" class="card-img-top" style="max-height: 10rem;" />
-                {% endif %}
-              </a>
-                <div class="card-body">
-                  <h4 class="card-title">{{ post.title }}</h4>
-                  <p class="card-text">{{ post.description }}</p>
-                  <a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-primary">Lire la suite</a>
-                </div>
-              </div>
-            </div>
-            {% endif %}{% endfor %}
-              </div>
+<hr>
+<section class="u-align-center u-clearfix u-white u-section-2" id="carousel_a13f">
+  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"><!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":""}--><!--/blog_options_json-->
+    <p></p>Autres Articles :</p>
 
+    {% for post in site.posts %}
+    <div class="u-blog u-repeater u-repeater-1" style="min-height: 0px"><!--blog_post-->
+      <div class="u-blog-post u-container-style u-repeater-item">
+        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><!--blog_post_image-->
+          {% if post.featured-img %}
+          <a href="{{ site.baseurl }}{{ post.url }}" ></a><img src="{{site.url}}{{site.baseurl}}/images/{{post.featured-img}}" class="u-blog-control u-image u-image-default u-image-1" data-image-width="2255" data-image-height="1500" /></a>
+          {% else %}
+          <a href="{{ site.baseurl }}{{ post.url }}" ></a><img src="{{site.url}}{{site.baseurl}}/images/{{post.featured-img-url}}" class="u-blog-control u-image u-image-default u-image-1" data-image-width="2255" data-image-height="1500" /></a>
+          {% endif %}
+           <h2 class="u-blog-control u-text u-text-1">
+            <a class="u-post-header-link" href="#"><!--blog_post_header_content-->{{ post.title }}<!--/blog_post_header_content--></a>
+          </h2><!--/blog_post_header--><!--blog_post_content-->
+          <div class="u-blog-control u-post-content u-text u-text-2"><!--blog_post_content_content-->{{ post.description }}<!--/blog_post_content_content--></div><!--/blog_post_content--><!--blog_post_metadata-->
+          <div class="u-blog-control u-metadata u-text-grey-40 u-metadata-1"><!--blog_post_metadata_date-->
+            <span class="u-meta-date u-meta-icon"><!--blog_post_metadata_date_content-->Thu Jun 25 2020<!--/blog_post_metadata_date_content--></span><!--/blog_post_metadata_date-->
+          </div><!--/blog_post_metadata--><!--blog_post_readmore-->
+          <a href="{{ site.baseurl }}{{ post.url }}" class="u-blog-control u-btn u-button-style u-btn-1"><!--blog_post_readmore_content-->Lire la suite<!--/blog_post_readmore_content--></a><!--/blog_post_readmore-->
+        </div>
+      </div><!--/blog_post--><!--blog_post-->
+
+      {% endfor %}
+    </div><!--/blog-->
+  </div>
+</section>
